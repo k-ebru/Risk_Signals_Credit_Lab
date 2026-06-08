@@ -1,0 +1,6 @@
+credit_limit_band,customers,observed_default_rate,average_limit,average_utilization
+very_low,138,0.181,24703.0,0.434
+low,1250,0.162,51777.0,0.442
+medium,1141,0.124,92045.0,0.437
+high,490,0.084,144427.0,0.424
+very_high,181,0.061,218155.0,0.44
