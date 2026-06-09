@@ -1,0 +1,7 @@
+check_name,value
+rows,3200.0
+duplicate_customer_ids,0.0
+missing_values,0.0
+observed_default_rate,0.1316
+average_limit_balance,88565.0
+average_utilization,0.4369
