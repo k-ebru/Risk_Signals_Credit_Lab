@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="520" viewBox="0 0 920 520"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
+<text x="32.0" y="38.0" class="title" text-anchor="start">Observed default rate by education segment</text>
+<line x1="86" y1="422.0" x2="878" y2="422.0" class="grid"/>
+<text x="76.0" y="426.0" class="small" text-anchor="end">0.00</text>
+<line x1="86" y1="334.0" x2="878" y2="334.0" class="grid"/>
+<text x="76.0" y="338.0" class="small" text-anchor="end">0.05</text>
+<line x1="86" y1="246.0" x2="878" y2="246.0" class="grid"/>
+<text x="76.0" y="250.0" class="small" text-anchor="end">0.09</text>
+<line x1="86" y1="158.0" x2="878" y2="158.0" class="grid"/>
+<text x="76.0" y="162.0" class="small" text-anchor="end">0.14</text>
+<line x1="86" y1="70.0" x2="878" y2="70.0" class="grid"/>
+<text x="76.0" y="74.0" class="small" text-anchor="end">0.19</text>
+<line x1="86" y1="70" x2="86" y2="422" class="axis"/>
+<line x1="86" y1="422" x2="878" y2="422" class="axis"/>
+<rect x="86.0" y="128.7" width="184.5" height="293.3" rx="4" fill="#2474a6"/>
+<text x="178.2" y="120.7" class="small" text-anchor="middle">0.16</text>
+<text x="178.2" y="448.0" class="small" text-anchor="middle">other</text>
+<rect x="288.5" y="164.2" width="184.5" height="257.8" rx="4" fill="#2474a6"/>
+<text x="380.8" y="156.2" class="small" text-anchor="middle">0.14</text>
+<text x="380.8" y="448.0" class="small" text-anchor="middle">university</text>
+<rect x="491.0" y="169.8" width="184.5" height="252.2" rx="4" fill="#2474a6"/>
+<text x="583.2" y="161.8" class="small" text-anchor="middle">0.14</text>
+<text x="583.2" y="448.0" class="small" text-anchor="middle">high_school</text>
+<rect x="693.5" y="212.7" width="184.5" height="209.3" rx="4" fill="#2474a6"/>
+<text x="785.8" y="204.7" class="small" text-anchor="middle">0.11</text>
+<text x="785.8" y="448.0" class="small" text-anchor="middle">graduate</text>
+</svg>

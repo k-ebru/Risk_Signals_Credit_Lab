@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="560" viewBox="0 0 620 560"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
+<text x="32.0" y="38.0" class="title" text-anchor="start">Confusion matrix at threshold 0.30</text>
+<rect x="140" y="110" width="170" height="170" fill="rgb(110,120,235)" stroke="#ffffff" stroke-width="4"/>
+<text x="225.0" y="182.0" class="label" text-anchor="middle">True negative</text>
+<text x="225.0" y="222.0" class="title" text-anchor="middle">751</text>
+<rect x="310" y="110" width="170" height="170" fill="rgb(221,231,235)" stroke="#ffffff" stroke-width="4"/>
+<text x="395.0" y="182.0" class="label" text-anchor="middle">False positive</text>
+<text x="395.0" y="222.0" class="title" text-anchor="middle">80</text>
+<rect x="140" y="280" width="170" height="170" fill="rgb(224,234,235)" stroke="#ffffff" stroke-width="4"/>
+<text x="225.0" y="352.0" class="label" text-anchor="middle">False negative</text>
+<text x="225.0" y="392.0" class="title" text-anchor="middle">66</text>
+<rect x="310" y="280" width="170" height="170" fill="rgb(224,234,235)" stroke="#ffffff" stroke-width="4"/>
+<text x="395.0" y="352.0" class="label" text-anchor="middle">True positive</text>
+<text x="395.0" y="392.0" class="title" text-anchor="middle">63</text>
+<text x="310.0" y="488.0" class="label" text-anchor="middle">Predicted class</text>
+<text x="54.0" y="280.0" class="label" text-anchor="middle">Actual class</text>
+</svg>
