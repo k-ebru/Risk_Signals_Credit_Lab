@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
+<text x="32.0" y="38.0" class="title" text-anchor="start">Top model explanation signals</text>
+<text x="238.0" y="102.8" class="small" text-anchor="end">utilization_ratio</text>
+<rect x="250" y="78.0" width="564.4" height="26.1" rx="4" fill="#2474a6"/>
+<text x="822.4" y="102.8" class="small" text-anchor="start">0.566</text>
+<text x="238.0" y="147.8" class="small" text-anchor="end">months_with_delay</text>
+<rect x="250" y="123.0" width="408.5" height="26.1" rx="4" fill="#2474a6"/>
+<text x="666.5" y="147.8" class="small" text-anchor="start">0.409</text>
+<text x="238.0" y="192.8" class="small" text-anchor="end">bill_amt_6</text>
+<rect x="250" y="168.0" width="188.0" height="26.1" rx="4" fill="#2474a6"/>
+<text x="446.0" y="192.8" class="small" text-anchor="start">0.188</text>
+<text x="238.0" y="237.8" class="small" text-anchor="end">pay_status_1</text>
+<rect x="250" y="213.0" width="154.1" height="26.1" rx="4" fill="#2474a6"/>
+<text x="412.1" y="237.8" class="small" text-anchor="start">0.154</text>
+<text x="238.0" y="282.8" class="small" text-anchor="end">bill_amt_3</text>
+<rect x="250" y="258.0" width="147.3" height="26.1" rx="4" fill="#2474a6"/>
+<text x="405.3" y="282.8" class="small" text-anchor="start">0.148</text>
+<text x="238.0" y="327.8" class="small" text-anchor="end">pay_amt_1</text>
+<rect x="250" y="303.0" width="132.8" height="26.1" rx="4" fill="#2474a6"/>
+<text x="390.8" y="327.8" class="small" text-anchor="start">0.133</text>
+<text x="238.0" y="372.8" class="small" text-anchor="end">age_group_40_to_49</text>
+<rect x="250" y="348.0" width="129.4" height="26.1" rx="4" fill="#2474a6"/>
+<text x="387.4" y="372.8" class="small" text-anchor="start">0.130</text>
+<text x="238.0" y="417.8" class="small" text-anchor="end">bill_amt_2</text>
+<rect x="250" y="393.0" width="124.8" height="26.1" rx="4" fill="#2474a6"/>
+<text x="382.8" y="417.8" class="small" text-anchor="start">0.125</text>
+<text x="238.0" y="462.8" class="small" text-anchor="end">age</text>
+<rect x="250" y="438.0" width="124.2" height="26.1" rx="4" fill="#2474a6"/>
+<text x="382.2" y="462.8" class="small" text-anchor="start">0.124</text>
+<text x="238.0" y="507.8" class="small" text-anchor="end">bill_amt_5</text>
+<rect x="250" y="483.0" width="106.3" height="26.1" rx="4" fill="#2474a6"/>
+<text x="364.3" y="507.8" class="small" text-anchor="start">0.107</text>
+</svg>
