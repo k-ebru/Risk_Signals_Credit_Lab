@@ -1,0 +1,25 @@
+customer_id,selected_model,baseline_pd,counterfactual_action,counterfactual_description,counterfactual_pd,pd_reduction,starting_utilization_ratio,counterfactual_utilization_ratio,starting_months_with_delay,counterfactual_months_with_delay,starting_payment_ratio,counterfactual_payment_ratio
+63,logistic_regression,0.8965650021586932,combined,Combine lower utilisation with improved repayment behaviour,0.026193438555197422,0.8703715636034958,0.8448,0.55,6,0,0.2944,0.45
+63,logistic_regression,0.8965650021586932,improve_repayment,Improve recent repayment pattern and payment ratio,0.04767509782825663,0.8488899043304365,0.8448,0.8448,6,0,0.2944,0.45
+63,logistic_regression,0.8965650021586932,lower_utilization,Lower utilisation to 55 percent where possible,0.6962281354285915,0.20033686673010165,0.8448,0.55,6,6,0.2944,0.2944
+285,logistic_regression,0.9438601665623619,combined,Combine lower utilisation with improved repayment behaviour,0.04821458879437463,0.8956455777679873,0.9256,0.55,4,0,0.2311,0.45
+285,logistic_regression,0.9438601665623619,improve_repayment,Improve recent repayment pattern and payment ratio,0.10698805484609077,0.8368721117162712,0.9256,0.9256,4,0,0.2311,0.45
+285,logistic_regression,0.9438601665623619,lower_utilization,Lower utilisation to 55 percent where possible,0.7830673818107549,0.16079278475160708,0.9256,0.55,4,4,0.2311,0.2311
+458,logistic_regression,0.9078607457826734,combined,Combine lower utilisation with improved repayment behaviour,0.03285998902581177,0.8750007567568616,0.9362,0.55,5,0,0.2664,0.45
+458,logistic_regression,0.9078607457826734,improve_repayment,Improve recent repayment pattern and payment ratio,0.07583497915030724,0.8320257666323662,0.9362,0.9362,5,0,0.2664,0.45
+458,logistic_regression,0.9078607457826734,lower_utilization,Lower utilisation to 55 percent where possible,0.669295692367778,0.23856505341489542,0.9362,0.55,5,5,0.2664,0.2664
+1173,logistic_regression,0.9074228302557276,combined,Combine lower utilisation with improved repayment behaviour,0.030202943829534437,0.8772198864261931,0.8929,0.55,4,0,0.3007,0.45
+1173,logistic_regression,0.9074228302557276,improve_repayment,Improve recent repayment pattern and payment ratio,0.059710377698237095,0.8477124525574905,0.8929,0.8929,4,0,0.3007,0.45
+1173,logistic_regression,0.9074228302557276,lower_utilization,Lower utilisation to 55 percent where possible,0.6005300152176599,0.30689281503806765,0.8929,0.55,4,4,0.3007,0.3007
+1523,logistic_regression,0.8960279265558806,combined,Combine lower utilisation with improved repayment behaviour,0.030190003762005986,0.8658379227938746,0.9069,0.55,5,0,0.2074,0.45
+1523,logistic_regression,0.8960279265558806,improve_repayment,Improve recent repayment pattern and payment ratio,0.0640213465439196,0.832006580011961,0.9069,0.9069,5,0,0.2074,0.45
+1523,logistic_regression,0.8960279265558806,lower_utilization,Lower utilisation to 55 percent where possible,0.6343595626301985,0.26166836392568205,0.9069,0.55,5,5,0.2074,0.2074
+2144,logistic_regression,0.8997482004056238,combined,Combine lower utilisation with improved repayment behaviour,0.03815104498403785,0.8615971554215859,0.9728,0.55,5,0,0.2327,0.45
+2144,logistic_regression,0.8997482004056238,improve_repayment,Improve recent repayment pattern and payment ratio,0.09631604712185451,0.8034321532837693,0.9728,0.9728,5,0,0.2327,0.45
+2144,logistic_regression,0.8997482004056238,lower_utilization,Lower utilisation to 55 percent where possible,0.648709243699583,0.2510389567060407,0.9728,0.55,5,5,0.2327,0.2327
+2441,logistic_regression,0.9024667603235307,combined,Combine lower utilisation with improved repayment behaviour,0.03140353530013813,0.8710632250233925,0.9361,0.55,4,0,0.2608,0.45
+2441,logistic_regression,0.9024667603235307,improve_repayment,Improve recent repayment pattern and payment ratio,0.06831671720059106,0.8341500431229396,0.9361,0.9361,4,0,0.2608,0.45
+2441,logistic_regression,0.9024667603235307,lower_utilization,Lower utilisation to 55 percent where possible,0.5661183418764871,0.33634841844704355,0.9361,0.55,4,4,0.2608,0.2608
+3033,logistic_regression,0.9435427274129031,combined,Combine lower utilisation with improved repayment behaviour,0.03742114419393026,0.9061215832189728,0.9387,0.55,5,0,0.2962,0.45
+3033,logistic_regression,0.9435427274129031,improve_repayment,Improve recent repayment pattern and payment ratio,0.08492559573420523,0.8586171316786979,0.9387,0.9387,5,0,0.2962,0.45
+3033,logistic_regression,0.9435427274129031,lower_utilization,Lower utilisation to 55 percent where possible,0.7837506709298717,0.1597920564830314,0.9387,0.55,5,5,0.2962,0.2962
