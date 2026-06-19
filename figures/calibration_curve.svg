@@ -1,39 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.axis-title{font-size:13px;font-weight:700;fill:#344052}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
 <text x="32.0" y="38.0" class="title" text-anchor="start">Calibration review</text>
-<line x1="74.0" y1="70" x2="74.0" y2="448" class="grid"/>
-<line x1="74" y1="448.0" x2="856" y2="448.0" class="grid"/>
-<text x="74.0" y="472.0" class="small" text-anchor="middle">0.0</text>
-<text x="62.0" y="452.0" class="small" text-anchor="end">0.0</text>
-<line x1="230.4" y1="70" x2="230.4" y2="448" class="grid"/>
-<line x1="74" y1="372.4" x2="856" y2="372.4" class="grid"/>
-<text x="230.4" y="472.0" class="small" text-anchor="middle">0.2</text>
-<text x="62.0" y="376.4" class="small" text-anchor="end">0.2</text>
-<line x1="386.8" y1="70" x2="386.8" y2="448" class="grid"/>
-<line x1="74" y1="296.8" x2="856" y2="296.8" class="grid"/>
-<text x="386.8" y="472.0" class="small" text-anchor="middle">0.4</text>
-<text x="62.0" y="300.8" class="small" text-anchor="end">0.4</text>
-<line x1="543.2" y1="70" x2="543.2" y2="448" class="grid"/>
-<line x1="74" y1="221.2" x2="856" y2="221.2" class="grid"/>
-<text x="543.2" y="472.0" class="small" text-anchor="middle">0.6</text>
-<text x="62.0" y="225.2" class="small" text-anchor="end">0.6</text>
-<line x1="699.6" y1="70" x2="699.6" y2="448" class="grid"/>
-<line x1="74" y1="145.6" x2="856" y2="145.6" class="grid"/>
-<text x="699.6" y="472.0" class="small" text-anchor="middle">0.8</text>
-<text x="62.0" y="149.6" class="small" text-anchor="end">0.8</text>
-<line x1="856.0" y1="70" x2="856.0" y2="448" class="grid"/>
-<line x1="74" y1="70.0" x2="856" y2="70.0" class="grid"/>
-<text x="856.0" y="472.0" class="small" text-anchor="middle">1.0</text>
-<text x="62.0" y="74.0" class="small" text-anchor="end">1.0</text>
-<line x1="74" y1="448" x2="856" y2="70" stroke="#8996a3" stroke-width="2" stroke-dasharray="6 5"/>
-<polyline fill="none" stroke="#2474a6" stroke-width="3" points="82.1,448.0 88.7,436.2 95.9,436.2 106.0,440.1 118.3,416.5 137.9,412.6 168.6,377.1 215.0,388.9 307.1,377.1 507.0,239.3"/>
-<circle cx="82.1" cy="448.0" r="3" fill="#2474a6"/>
-<circle cx="88.7" cy="436.2" r="3" fill="#2474a6"/>
-<circle cx="95.9" cy="436.2" r="3" fill="#2474a6"/>
-<circle cx="106.0" cy="440.1" r="3" fill="#2474a6"/>
-<circle cx="118.3" cy="416.5" r="3" fill="#2474a6"/>
-<circle cx="137.9" cy="412.6" r="3" fill="#2474a6"/>
-<circle cx="168.6" cy="377.1" r="3" fill="#2474a6"/>
-<circle cx="215.0" cy="388.9" r="3" fill="#2474a6"/>
-<circle cx="307.1" cy="377.1" r="3" fill="#2474a6"/>
-<circle cx="507.0" cy="239.3" r="3" fill="#2474a6"/>
+<line x1="90.0" y1="70" x2="90.0" y2="424" class="grid"/>
+<line x1="90" y1="424.0" x2="856" y2="424.0" class="grid"/>
+<text x="90.0" y="448.0" class="small" text-anchor="middle">0.0</text>
+<text x="78.0" y="428.0" class="small" text-anchor="end">0.0</text>
+<line x1="243.2" y1="70" x2="243.2" y2="424" class="grid"/>
+<line x1="90" y1="353.2" x2="856" y2="353.2" class="grid"/>
+<text x="243.2" y="448.0" class="small" text-anchor="middle">0.2</text>
+<text x="78.0" y="357.2" class="small" text-anchor="end">0.2</text>
+<line x1="396.4" y1="70" x2="396.4" y2="424" class="grid"/>
+<line x1="90" y1="282.4" x2="856" y2="282.4" class="grid"/>
+<text x="396.4" y="448.0" class="small" text-anchor="middle">0.4</text>
+<text x="78.0" y="286.4" class="small" text-anchor="end">0.4</text>
+<line x1="549.6" y1="70" x2="549.6" y2="424" class="grid"/>
+<line x1="90" y1="211.6" x2="856" y2="211.6" class="grid"/>
+<text x="549.6" y="448.0" class="small" text-anchor="middle">0.6</text>
+<text x="78.0" y="215.6" class="small" text-anchor="end">0.6</text>
+<line x1="702.8" y1="70" x2="702.8" y2="424" class="grid"/>
+<line x1="90" y1="140.8" x2="856" y2="140.8" class="grid"/>
+<text x="702.8" y="448.0" class="small" text-anchor="middle">0.8</text>
+<text x="78.0" y="144.8" class="small" text-anchor="end">0.8</text>
+<line x1="856.0" y1="70" x2="856.0" y2="424" class="grid"/>
+<line x1="90" y1="70.0" x2="856" y2="70.0" class="grid"/>
+<text x="856.0" y="448.0" class="small" text-anchor="middle">1.0</text>
+<text x="78.0" y="74.0" class="small" text-anchor="end">1.0</text>
+<line x1="90" y1="424" x2="856" y2="424" class="axis"/>
+<line x1="90" y1="70" x2="90" y2="424" class="axis"/>
+<text x="24.0" y="247.0" class="axis-title" text-anchor="middle" transform="rotate(-90 24.0 247.0)">Observed default rate</text>
+<text x="473.0" y="492.0" class="axis-title" text-anchor="middle">Average predicted PD</text>
+<line x1="90" y1="424" x2="856" y2="70" stroke="#8996a3" stroke-width="2" stroke-dasharray="6 5"/>
+<polyline fill="none" stroke="#2474a6" stroke-width="3" points="97.9,424.0 104.4,412.9 111.5,412.9 121.3,416.6 133.3,394.5 152.6,390.8 182.7,357.6 228.1,368.7 318.4,357.6 514.2,228.6"/>
+<circle cx="97.9" cy="424.0" r="3" fill="#2474a6"/>
+<circle cx="104.4" cy="412.9" r="3" fill="#2474a6"/>
+<circle cx="111.5" cy="412.9" r="3" fill="#2474a6"/>
+<circle cx="121.3" cy="416.6" r="3" fill="#2474a6"/>
+<circle cx="133.3" cy="394.5" r="3" fill="#2474a6"/>
+<circle cx="152.6" cy="390.8" r="3" fill="#2474a6"/>
+<circle cx="182.7" cy="357.6" r="3" fill="#2474a6"/>
+<circle cx="228.1" cy="368.7" r="3" fill="#2474a6"/>
+<circle cx="318.4" cy="357.6" r="3" fill="#2474a6"/>
+<circle cx="514.2" cy="228.6" r="3" fill="#2474a6"/>
 </svg>

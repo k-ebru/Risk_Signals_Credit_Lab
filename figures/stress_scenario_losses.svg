@@ -1,27 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="940" height="540" viewBox="0 0 940 540"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="540" viewBox="0 0 940 540"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.axis-title{font-size:13px;font-weight:700;fill:#344052}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
 <text x="32.0" y="38.0" class="title" text-anchor="start">Expected loss and VaR by stress scenario</text>
 <rect x="660" y="24" width="14" height="14" fill="#2474a6"/>
 <text x="682.0" y="36.0" class="small" text-anchor="start">Expected loss</text>
 <rect x="790" y="24" width="14" height="14" fill="#d95f36"/>
 <text x="812.0" y="36.0" class="small" text-anchor="start">VaR 95</text>
-<line x1="86" y1="444.0" x2="894" y2="444.0" class="grid"/>
-<text x="76.0" y="448.0" class="small" text-anchor="end">0.00</text>
-<line x1="86" y1="352.5" x2="894" y2="352.5" class="grid"/>
-<text x="76.0" y="356.5" class="small" text-anchor="end">3.30</text>
-<line x1="86" y1="261.0" x2="894" y2="261.0" class="grid"/>
-<text x="76.0" y="265.0" class="small" text-anchor="end">6.59</text>
-<line x1="86" y1="169.5" x2="894" y2="169.5" class="grid"/>
-<text x="76.0" y="173.5" class="small" text-anchor="end">9.89</text>
-<line x1="86" y1="78.0" x2="894" y2="78.0" class="grid"/>
-<text x="76.0" y="82.0" class="small" text-anchor="end">13.19</text>
-<line x1="86" y1="444" x2="894" y2="444" class="axis"/>
-<rect x="86.0" y="258.9" width="100.3" height="185.1" rx="4" fill="#2474a6"/>
-<rect x="191.3" y="244.5" width="100.3" height="199.5" rx="4" fill="#d95f36"/>
-<text x="211.3" y="470.0" class="small" text-anchor="middle">baseline</text>
-<rect x="364.7" y="217.7" width="100.3" height="226.3" rx="4" fill="#2474a6"/>
-<rect x="469.9" y="201.2" width="100.3" height="242.8" rx="4" fill="#d95f36"/>
-<text x="490.0" y="470.0" class="small" text-anchor="middle">mild_stress</text>
-<rect x="643.3" y="162.3" width="100.3" height="281.7" rx="4" fill="#2474a6"/>
-<rect x="748.6" y="144.0" width="100.3" height="300.0" rx="4" fill="#d95f36"/>
-<text x="768.7" y="470.0" class="small" text-anchor="middle">severe_stress</text>
+<line x1="96" y1="424.0" x2="894" y2="424.0" class="grid"/>
+<text x="86.0" y="428.0" class="small" text-anchor="end">0.00</text>
+<line x1="96" y1="337.5" x2="894" y2="337.5" class="grid"/>
+<text x="86.0" y="341.5" class="small" text-anchor="end">3.30</text>
+<line x1="96" y1="251.0" x2="894" y2="251.0" class="grid"/>
+<text x="86.0" y="255.0" class="small" text-anchor="end">6.59</text>
+<line x1="96" y1="164.5" x2="894" y2="164.5" class="grid"/>
+<text x="86.0" y="168.5" class="small" text-anchor="end">9.89</text>
+<line x1="96" y1="78.0" x2="894" y2="78.0" class="grid"/>
+<text x="86.0" y="82.0" class="small" text-anchor="end">13.19</text>
+<line x1="96" y1="424" x2="894" y2="424" class="axis"/>
+<text x="24.0" y="251.0" class="axis-title" text-anchor="middle" transform="rotate(-90 24.0 251.0)">Loss (GBP millions)</text>
+<text x="495.0" y="512.0" class="axis-title" text-anchor="middle">Stress scenario</text>
+<rect x="96.0" y="249.0" width="98.9" height="175.0" rx="4" fill="#2474a6"/>
+<rect x="199.9" y="235.4" width="98.9" height="188.6" rx="4" fill="#d95f36"/>
+<text x="219.7" y="450.0" class="small" text-anchor="middle">baseline</text>
+<rect x="371.3" y="210.1" width="98.9" height="213.9" rx="4" fill="#2474a6"/>
+<rect x="475.3" y="194.5" width="98.9" height="229.5" rx="4" fill="#d95f36"/>
+<text x="495.0" y="450.0" class="small" text-anchor="middle">mild_stress</text>
+<rect x="646.7" y="157.7" width="98.9" height="266.3" rx="4" fill="#2474a6"/>
+<rect x="750.6" y="140.4" width="98.9" height="283.6" rx="4" fill="#d95f36"/>
+<text x="770.3" y="450.0" class="small" text-anchor="middle">severe_stress</text>
 </svg>

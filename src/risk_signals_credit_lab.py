@@ -964,6 +964,7 @@ def svg_header(width: int, height: int) -> str:
         "text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}"
         ".title{font-size:24px;font-weight:700}"
         ".label{font-size:13px}"
+        ".axis-title{font-size:13px;font-weight:700;fill:#344052}"
         ".small{font-size:11px;fill:#566474}"
         ".axis{stroke:#8d99a8;stroke-width:1}"
         ".grid{stroke:#d9dee7;stroke-width:1}"
@@ -976,9 +977,27 @@ def svg_text(x: float, y: float, text: str, class_name: str = "label", anchor: s
     return f'<text x="{x:.1f}" y="{y:.1f}" class="{class_name}" text-anchor="{anchor}">{escaped}</text>'
 
 
-def write_bar_chart(path: Path, title: str, labels: list[str], values: list[float], color: str = "#2474a6") -> None:
+def svg_rotated_text(x: float, y: float, text: str, class_name: str = "axis-title", anchor: str = "middle") -> str:
+    escaped = html.escape(str(text))
+    return (
+        f'<text x="{x:.1f}" y="{y:.1f}" class="{class_name}" text-anchor="{anchor}" '
+        f'transform="rotate(-90 {x:.1f} {y:.1f})">{escaped}</text>'
+    )
+
+
+def write_bar_chart(
+    path: Path,
+    title: str,
+    labels: list[str],
+    values: list[float],
+    x_axis_label: str,
+    y_axis_label: str,
+    color: str = "#2474a6",
+    tick_format: str = "{:.2f}",
+    value_format: str = "{:.2f}",
+) -> None:
     width, height = 920, 520
-    margin_left, margin_right, margin_top, margin_bottom = 86, 42, 70, 98
+    margin_left, margin_right, margin_top, margin_bottom = 96, 42, 70, 118
     chart_width = width - margin_left - margin_right
     chart_height = height - margin_top - margin_bottom
     max_value = max(values) * 1.20 if values else 1
@@ -988,15 +1007,17 @@ def write_bar_chart(path: Path, title: str, labels: list[str], values: list[floa
     for tick in np.linspace(0, max_value, 5):
         y = margin_top + chart_height - chart_height * tick / max_value
         parts.append(f'<line x1="{margin_left}" y1="{y:.1f}" x2="{width - margin_right}" y2="{y:.1f}" class="grid"/>')
-        parts.append(svg_text(margin_left - 10, y + 4, f"{tick:.2f}", "small", "end"))
+        parts.append(svg_text(margin_left - 10, y + 4, tick_format.format(tick), "small", "end"))
     parts.append(f'<line x1="{margin_left}" y1="{margin_top}" x2="{margin_left}" y2="{margin_top + chart_height}" class="axis"/>')
     parts.append(f'<line x1="{margin_left}" y1="{margin_top + chart_height}" x2="{width - margin_right}" y2="{margin_top + chart_height}" class="axis"/>')
+    parts.append(svg_rotated_text(24, margin_top + chart_height / 2, y_axis_label))
+    parts.append(svg_text(margin_left + chart_width / 2, height - 28, x_axis_label, "axis-title", "middle"))
     for i, (label, value) in enumerate(zip(labels, values)):
         x = margin_left + i * (bar_width + bar_gap)
         bar_height = chart_height * value / max_value
         y = margin_top + chart_height - bar_height
         parts.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_width:.1f}" height="{bar_height:.1f}" rx="4" fill="{color}"/>')
-        parts.append(svg_text(x + bar_width / 2, y - 8, f"{value:.2f}", "small", "middle"))
+        parts.append(svg_text(x + bar_width / 2, y - 8, value_format.format(value), "small", "middle"))
         parts.append(svg_text(x + bar_width / 2, margin_top + chart_height + 26, label, "small", "middle"))
     parts.append("</svg>")
     path.write_text("\n".join(parts), encoding="utf-8")
@@ -1010,9 +1031,12 @@ def write_grouped_bar_chart(
     second_values: list[float],
     first_label: str,
     second_label: str,
+    x_axis_label: str,
+    y_axis_label: str,
+    tick_format: str = "{:.2f}",
 ) -> None:
     width, height = 940, 540
-    margin_left, margin_right, margin_top, margin_bottom = 86, 46, 78, 96
+    margin_left, margin_right, margin_top, margin_bottom = 96, 46, 78, 116
     chart_width = width - margin_left - margin_right
     chart_height = height - margin_top - margin_bottom
     max_value = max(first_values + second_values) * 1.22
@@ -1027,8 +1051,10 @@ def write_grouped_bar_chart(
     for tick in np.linspace(0, max_value, 5):
         y = margin_top + chart_height - chart_height * tick / max_value
         parts.append(f'<line x1="{margin_left}" y1="{y:.1f}" x2="{width - margin_right}" y2="{y:.1f}" class="grid"/>')
-        parts.append(svg_text(margin_left - 10, y + 4, f"{tick:.2f}", "small", "end"))
+        parts.append(svg_text(margin_left - 10, y + 4, tick_format.format(tick), "small", "end"))
     parts.append(f'<line x1="{margin_left}" y1="{margin_top + chart_height}" x2="{width - margin_right}" y2="{margin_top + chart_height}" class="axis"/>')
+    parts.append(svg_rotated_text(24, margin_top + chart_height / 2, y_axis_label))
+    parts.append(svg_text(margin_left + chart_width / 2, height - 28, x_axis_label, "axis-title", "middle"))
     for i, label in enumerate(labels):
         x_group = margin_left + i * (group_width + group_gap)
         for j, (value, color) in enumerate([(first_values[i], "#2474a6"), (second_values[i], "#d95f36")]):
@@ -1041,9 +1067,17 @@ def write_grouped_bar_chart(
     path.write_text("\n".join(parts), encoding="utf-8")
 
 
-def write_line_chart(path: Path, title: str, x_values: list[float], y_values: list[float], diagonal: bool = False) -> None:
+def write_line_chart(
+    path: Path,
+    title: str,
+    x_values: list[float],
+    y_values: list[float],
+    x_axis_label: str,
+    y_axis_label: str,
+    diagonal: bool = False,
+) -> None:
     width, height = 900, 520
-    margin_left, margin_right, margin_top, margin_bottom = 74, 44, 70, 72
+    margin_left, margin_right, margin_top, margin_bottom = 90, 44, 70, 96
     chart_width = width - margin_left - margin_right
     chart_height = height - margin_top - margin_bottom
     parts = [svg_header(width, height), svg_text(32, 38, title, "title")]
@@ -1054,6 +1088,10 @@ def write_line_chart(path: Path, title: str, x_values: list[float], y_values: li
         parts.append(f'<line x1="{margin_left}" y1="{y:.1f}" x2="{width - margin_right}" y2="{y:.1f}" class="grid"/>')
         parts.append(svg_text(x, margin_top + chart_height + 24, f"{tick:.1f}", "small", "middle"))
         parts.append(svg_text(margin_left - 12, y + 4, f"{tick:.1f}", "small", "end"))
+    parts.append(f'<line x1="{margin_left}" y1="{margin_top + chart_height}" x2="{width - margin_right}" y2="{margin_top + chart_height}" class="axis"/>')
+    parts.append(f'<line x1="{margin_left}" y1="{margin_top}" x2="{margin_left}" y2="{margin_top + chart_height}" class="axis"/>')
+    parts.append(svg_rotated_text(24, margin_top + chart_height / 2, y_axis_label))
+    parts.append(svg_text(margin_left + chart_width / 2, height - 28, x_axis_label, "axis-title", "middle"))
     if diagonal:
         parts.append(
             f'<line x1="{margin_left}" y1="{margin_top + chart_height}" '
@@ -1072,13 +1110,23 @@ def write_line_chart(path: Path, title: str, x_values: list[float], y_values: li
     path.write_text("\n".join(parts), encoding="utf-8")
 
 
-def write_horizontal_bar_chart(path: Path, title: str, labels: list[str], values: list[float]) -> None:
+def write_horizontal_bar_chart(
+    path: Path,
+    title: str,
+    labels: list[str],
+    values: list[float],
+    x_axis_label: str,
+    y_axis_label: str,
+) -> None:
     width, height = 960, 560
-    margin_left, margin_right, margin_top, margin_bottom = 250, 44, 70, 40
+    margin_left, margin_right, margin_top, margin_bottom = 250, 44, 70, 72
     chart_width = width - margin_left - margin_right
     row_height = (height - margin_top - margin_bottom) / max(len(labels), 1)
     max_value = max(values) * 1.18 if values else 1
     parts = [svg_header(width, height), svg_text(32, 38, title, "title")]
+    parts.append(f'<line x1="{margin_left}" y1="{height - margin_bottom}" x2="{width - margin_right}" y2="{height - margin_bottom}" class="axis"/>')
+    parts.append(svg_rotated_text(24, margin_top + (height - margin_top - margin_bottom) / 2, y_axis_label))
+    parts.append(svg_text(margin_left + chart_width / 2, height - 24, x_axis_label, "axis-title", "middle"))
     for i, (label, value) in enumerate(zip(labels, values)):
         y = margin_top + i * row_height + 8
         bar_width = chart_width * value / max_value
@@ -1089,11 +1137,21 @@ def write_horizontal_bar_chart(path: Path, title: str, labels: list[str], values
     path.write_text("\n".join(parts), encoding="utf-8")
 
 
-def write_histogram(path: Path, title: str, values: np.ndarray) -> None:
+def write_histogram(path: Path, title: str, values: np.ndarray, x_axis_label: str, y_axis_label: str) -> None:
     counts, bin_edges = np.histogram(values, bins=28)
     labels = [f"{edge / 1_000_000:.1f}" for edge in bin_edges[:-1]]
     scaled_values = counts.astype(float).tolist()
-    write_bar_chart(path, title, labels, scaled_values, color="#5a7f3b")
+    write_bar_chart(
+        path,
+        title,
+        labels,
+        scaled_values,
+        x_axis_label,
+        y_axis_label,
+        color="#5a7f3b",
+        tick_format="{:.0f}",
+        value_format="{:.0f}",
+    )
 
 
 def write_confusion_matrix(path: Path, metrics: dict) -> None:
@@ -1120,8 +1178,8 @@ def write_confusion_matrix(path: Path, metrics: dict) -> None:
             parts.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" fill="{color}" stroke="#ffffff" stroke-width="4"/>')
             parts.append(svg_text(x + cell / 2, y + 72, labels[row][col], "label", "middle"))
             parts.append(svg_text(x + cell / 2, y + 112, f"{int(value):,}", "title", "middle"))
-    parts.append(svg_text(start_x + cell, start_y + cell * 2 + 38, "Predicted class", "label", "middle"))
-    parts.append(svg_text(54, start_y + cell, "Actual class", "label", "middle"))
+    parts.append(svg_text(start_x + cell, start_y + cell * 2 + 38, "Predicted class", "axis-title", "middle"))
+    parts.append(svg_rotated_text(54, start_y + cell, "Actual class"))
     parts.append("</svg>")
     path.write_text("\n".join(parts), encoding="utf-8")
 
@@ -1133,6 +1191,8 @@ def make_figures(outputs: dict, stress_summary: pd.DataFrame, distribution: pd.D
         "Observed default rate by education segment",
         education["education"].tolist(),
         education["observed_default_rate"].astype(float).tolist(),
+        "Education segment",
+        "Observed default rate",
     )
 
     roc = outputs["roc_points"]
@@ -1141,6 +1201,8 @@ def make_figures(outputs: dict, stress_summary: pd.DataFrame, distribution: pd.D
         "ROC curve for selected model",
         roc["fpr"].astype(float).tolist(),
         roc["tpr"].astype(float).tolist(),
+        "False positive rate",
+        "True positive rate",
         diagonal=True,
     )
 
@@ -1150,6 +1212,8 @@ def make_figures(outputs: dict, stress_summary: pd.DataFrame, distribution: pd.D
         "Calibration review",
         calibration["average_predicted_pd"].astype(float).tolist(),
         calibration["observed_default_rate"].astype(float).tolist(),
+        "Average predicted PD",
+        "Observed default rate",
         diagonal=True,
     )
 
@@ -1162,6 +1226,8 @@ def make_figures(outputs: dict, stress_summary: pd.DataFrame, distribution: pd.D
         bands["observed_default_rate"].astype(float).tolist(),
         "Predicted PD",
         "Observed rate",
+        "Risk band",
+        "Default rate",
     )
 
     explainability = outputs["explainability"].head(10)
@@ -1170,6 +1236,8 @@ def make_figures(outputs: dict, stress_summary: pd.DataFrame, distribution: pd.D
         "Top model explanation signals",
         explainability["feature"].astype(str).tolist(),
         explainability["importance"].astype(float).tolist(),
+        "Relative importance",
+        "Feature",
     )
 
     baseline_losses = distribution.loc[distribution["scenario"] == "baseline", "loss"].to_numpy()
@@ -1177,6 +1245,8 @@ def make_figures(outputs: dict, stress_summary: pd.DataFrame, distribution: pd.D
         FIGURES / "monte_carlo_loss_distribution.svg",
         "Monte Carlo baseline loss distribution",
         baseline_losses,
+        "Portfolio loss (GBP millions)",
+        "Simulation count",
     )
 
     write_grouped_bar_chart(
@@ -1187,6 +1257,8 @@ def make_figures(outputs: dict, stress_summary: pd.DataFrame, distribution: pd.D
         (stress_summary["value_at_risk_95"] / 1_000_000).astype(float).tolist(),
         "Expected loss",
         "VaR 95",
+        "Stress scenario",
+        "Loss (GBP millions)",
     )
 
     write_confusion_matrix(FIGURES / "confusion_matrix.svg", outputs["confusion_metrics"])
