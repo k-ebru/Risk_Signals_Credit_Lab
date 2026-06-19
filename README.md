@@ -74,7 +74,7 @@ pytest
 |----------|--------------|--------|---------|
 | Baseline | 6,668,905 | 7,185,520 | 7,325,264 |
 | Mild stress | 8,153,222 | 8,747,561 | 8,890,582 |
-| Severe stress | 10,147,510 | 10,807,880 | 10,991,792 |
+| Severe stress | 10,147,509 | 10,807,880 | 10,991,792 |
 
 Full simulation output in `data/processed/stress_test_summary.csv`.
 

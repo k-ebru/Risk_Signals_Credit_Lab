@@ -561,14 +561,22 @@ def predict_named_model(model_name: str, model_objects: dict, x_values: np.ndarr
 
 
 def roc_curve_points(y_true: np.ndarray, y_score: np.ndarray) -> pd.DataFrame:
-    order = np.argsort(-y_score)
-    y_sorted = y_true[order]
-    positives = y_true.sum()
-    negatives = len(y_true) - positives
-    true_positive = np.cumsum(y_sorted)
-    false_positive = np.cumsum(1 - y_sorted)
-    tpr = np.concatenate([[0.0], true_positive / max(positives, 1), [1.0]])
-    fpr = np.concatenate([[0.0], false_positive / max(negatives, 1), [1.0]])
+    frame = pd.DataFrame({"observed": y_true, "score": y_score})
+    grouped = (
+        frame.groupby("score", observed=True)
+        .agg(
+            positives=("observed", "sum"),
+            customers=("observed", "size"),
+        )
+        .reset_index()
+        .sort_values("score", ascending=False)
+    )
+    positives = float(frame["observed"].sum())
+    negatives = float(len(frame) - positives)
+    true_positive = grouped["positives"].cumsum().to_numpy(dtype=float)
+    false_positive = (grouped["customers"] - grouped["positives"]).cumsum().to_numpy(dtype=float)
+    tpr = np.concatenate([[0.0], true_positive / max(positives, 1.0)])
+    fpr = np.concatenate([[0.0], false_positive / max(negatives, 1.0)])
     return pd.DataFrame({"fpr": fpr, "tpr": tpr})
 
 

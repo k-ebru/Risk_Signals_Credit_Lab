@@ -42,6 +42,14 @@ def test_feature_split_and_logistic_predictions_are_valid() -> None:
     assert probabilities.std() > 0
 
 
+def test_auc_is_stable_when_scores_have_ties() -> None:
+    y_true = np.array([1, 0, 1, 0, 1, 0], dtype=float)
+    y_score = np.array([0.8, 0.8, 0.4, 0.4, 0.4, 0.1], dtype=float)
+    order = np.array([1, 0, 3, 4, 2, 5])
+
+    assert lab.auc_score(y_true, y_score) == lab.auc_score(y_true[order], y_score[order])
+
+
 def test_validation_and_sql_outputs_are_written(tmp_path, monkeypatch) -> None:
     raw = lab.make_customer_data(rows=120, seed=3)
     model_table = lab.add_business_fields(raw)
