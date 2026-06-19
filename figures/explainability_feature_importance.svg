@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.axis-title{font-size:13px;font-weight:700;fill:#344052}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.axis-title{font-size:16px;font-weight:700;fill:#27313f}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
 <text x="32.0" y="38.0" class="title" text-anchor="start">Top model explanation signals</text>
 <line x1="250" y1="488" x2="916" y2="488" class="axis"/>
-<text x="24.0" y="279.0" class="axis-title" text-anchor="middle" transform="rotate(-90 24.0 279.0)">Feature</text>
+<text x="34.0" y="279.0" class="axis-title" text-anchor="middle" transform="rotate(-90 34.0 279.0)">Feature</text>
 <text x="583.0" y="536.0" class="axis-title" text-anchor="middle">Relative importance</text>
 <text x="238.0" y="101.0" class="small" text-anchor="end">utilization_ratio</text>
 <rect x="250" y="78.0" width="564.4" height="24.2" rx="4" fill="#2474a6"/>

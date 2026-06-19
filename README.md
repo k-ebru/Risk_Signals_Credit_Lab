@@ -56,17 +56,17 @@ pytest
 
 ## Sample outputs
 
-![Default rate by segment](figures/default_rate_by_segment.svg)
+![Default rate by segment](figures/default_rate_by_segment.svg?v=4)
 
-![ROC curve](figures/roc_curve.svg)
+![ROC curve](figures/roc_curve.svg?v=4)
 
-![Calibration curve](figures/calibration_curve.svg)
+![Calibration curve](figures/calibration_curve.svg?v=4)
 
-![Risk band observed default](figures/risk_band_observed_default.svg)
+![Risk band observed default](figures/risk_band_observed_default.svg?v=4)
 
-![Feature importance](figures/explainability_feature_importance.svg)
+![Feature importance](figures/explainability_feature_importance.svg?v=4)
 
-![Monte Carlo loss distribution](figures/monte_carlo_loss_distribution.svg)
+![Monte Carlo loss distribution](figures/monte_carlo_loss_distribution.svg?v=4)
 
 ## Stress testing results
 

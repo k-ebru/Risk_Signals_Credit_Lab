@@ -964,7 +964,7 @@ def svg_header(width: int, height: int) -> str:
         "text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}"
         ".title{font-size:24px;font-weight:700}"
         ".label{font-size:13px}"
-        ".axis-title{font-size:13px;font-weight:700;fill:#344052}"
+        ".axis-title{font-size:16px;font-weight:700;fill:#27313f}"
         ".small{font-size:11px;fill:#566474}"
         ".axis{stroke:#8d99a8;stroke-width:1}"
         ".grid{stroke:#d9dee7;stroke-width:1}"
@@ -1010,7 +1010,7 @@ def write_bar_chart(
         parts.append(svg_text(margin_left - 10, y + 4, tick_format.format(tick), "small", "end"))
     parts.append(f'<line x1="{margin_left}" y1="{margin_top}" x2="{margin_left}" y2="{margin_top + chart_height}" class="axis"/>')
     parts.append(f'<line x1="{margin_left}" y1="{margin_top + chart_height}" x2="{width - margin_right}" y2="{margin_top + chart_height}" class="axis"/>')
-    parts.append(svg_rotated_text(24, margin_top + chart_height / 2, y_axis_label))
+    parts.append(svg_rotated_text(34, margin_top + chart_height / 2, y_axis_label))
     parts.append(svg_text(margin_left + chart_width / 2, height - 28, x_axis_label, "axis-title", "middle"))
     for i, (label, value) in enumerate(zip(labels, values)):
         x = margin_left + i * (bar_width + bar_gap)
@@ -1053,7 +1053,7 @@ def write_grouped_bar_chart(
         parts.append(f'<line x1="{margin_left}" y1="{y:.1f}" x2="{width - margin_right}" y2="{y:.1f}" class="grid"/>')
         parts.append(svg_text(margin_left - 10, y + 4, tick_format.format(tick), "small", "end"))
     parts.append(f'<line x1="{margin_left}" y1="{margin_top + chart_height}" x2="{width - margin_right}" y2="{margin_top + chart_height}" class="axis"/>')
-    parts.append(svg_rotated_text(24, margin_top + chart_height / 2, y_axis_label))
+    parts.append(svg_rotated_text(34, margin_top + chart_height / 2, y_axis_label))
     parts.append(svg_text(margin_left + chart_width / 2, height - 28, x_axis_label, "axis-title", "middle"))
     for i, label in enumerate(labels):
         x_group = margin_left + i * (group_width + group_gap)
@@ -1090,7 +1090,7 @@ def write_line_chart(
         parts.append(svg_text(margin_left - 12, y + 4, f"{tick:.1f}", "small", "end"))
     parts.append(f'<line x1="{margin_left}" y1="{margin_top + chart_height}" x2="{width - margin_right}" y2="{margin_top + chart_height}" class="axis"/>')
     parts.append(f'<line x1="{margin_left}" y1="{margin_top}" x2="{margin_left}" y2="{margin_top + chart_height}" class="axis"/>')
-    parts.append(svg_rotated_text(24, margin_top + chart_height / 2, y_axis_label))
+    parts.append(svg_rotated_text(34, margin_top + chart_height / 2, y_axis_label))
     parts.append(svg_text(margin_left + chart_width / 2, height - 28, x_axis_label, "axis-title", "middle"))
     if diagonal:
         parts.append(
@@ -1125,7 +1125,7 @@ def write_horizontal_bar_chart(
     max_value = max(values) * 1.18 if values else 1
     parts = [svg_header(width, height), svg_text(32, 38, title, "title")]
     parts.append(f'<line x1="{margin_left}" y1="{height - margin_bottom}" x2="{width - margin_right}" y2="{height - margin_bottom}" class="axis"/>')
-    parts.append(svg_rotated_text(24, margin_top + (height - margin_top - margin_bottom) / 2, y_axis_label))
+    parts.append(svg_rotated_text(34, margin_top + (height - margin_top - margin_bottom) / 2, y_axis_label))
     parts.append(svg_text(margin_left + chart_width / 2, height - 24, x_axis_label, "axis-title", "middle"))
     for i, (label, value) in enumerate(zip(labels, values)):
         y = margin_top + i * row_height + 8

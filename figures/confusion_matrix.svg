@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="620" height="560" viewBox="0 0 620 560"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.axis-title{font-size:13px;font-weight:700;fill:#344052}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="560" viewBox="0 0 620 560"><style>text{font-family:Arial,Helvetica,sans-serif;fill:#27313f}.title{font-size:24px;font-weight:700}.label{font-size:13px}.axis-title{font-size:16px;font-weight:700;fill:#27313f}.small{font-size:11px;fill:#566474}.axis{stroke:#8d99a8;stroke-width:1}.grid{stroke:#d9dee7;stroke-width:1}</style>
 <text x="32.0" y="38.0" class="title" text-anchor="start">Confusion matrix at threshold 0.30</text>
 <rect x="140" y="110" width="170" height="170" fill="rgb(110,120,235)" stroke="#ffffff" stroke-width="4"/>
 <text x="225.0" y="182.0" class="label" text-anchor="middle">True negative</text>
