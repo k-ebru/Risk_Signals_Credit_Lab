@@ -13,7 +13,7 @@ It is not meant to be a bank-grade model. It is a learning project with clear as
 - Logistic regression is the interpretable baseline; tree models are there for comparison
 - Probability quality gets its own notebook (calibration, Brier score, risk bands) because in credit risk, good ranking matters more than raw accuracy
 - SHAP is in a separate notebook since it needs the `shap` package
-- Monte Carlo connects PD → EAD → LGD → portfolio loss distribution
+- Monte Carlo connects PD -> EAD -> LGD -> portfolio loss distribution
 - DiCE counterfactuals give an "actionable" angle on the model output
 
 ## Data notes
