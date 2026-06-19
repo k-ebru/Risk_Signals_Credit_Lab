@@ -22,24 +22,17 @@ I structured it as a small model review case study where the predictions get che
 
 ## Project structure
 
-```
-├── data/raw/                        # Synthetic customer data
-├── data/processed/                  # Model outputs, scores, stress results
-├── sql/                             # Portfolio and segment queries
-├── notebooks/
-│   ├── 01_data_cleaning_and_checks
-│   ├── 02_sql_risk_exploration
-│   ├── 03_baseline_scorecard_model
-│   ├── 04_machine_learning_models
-│   ├── 05_model_validation_and_calibration
-│   ├── 06_shap_model_explainability
-│   ├── 07_time_series_risk_signals
-│   ├── 08_monte_carlo_stress_testing
-│   └── 09_counterfactual_explanations
-├── reports/                         # Written summaries
-├── figures/                         # SVG charts
-├── src/risk_signals_credit_lab.py   # Main reproducible pipeline
-└── requirements.txt
+```text
+data/raw/                       # Synthetic customer data
+data/processed/                 # Model outputs, scores, stress results
+sql/                            # Portfolio and segment queries
+notebooks/                      # Executed analysis notebooks
+reports/                        # Written summaries
+figures/                        # SVG charts
+src/risk_signals_credit_lab.py  # Main reproducible pipeline
+tests/                          # Small smoke checks
+LICENSE
+requirements.txt
 ```
 
 ## How to run
@@ -52,6 +45,14 @@ python src/risk_signals_credit_lab.py
 This generates the data, runs the models, produces figures and writes the reports. The notebooks can then be run interactively for the sklearn/SHAP/DiCE extensions.
 
 The main pipeline uses only numpy, pandas and the standard library. Notebooks pull in sklearn, shap and dice-ml for the richer analysis.
+
+## Tests
+
+The tests are small smoke checks. They cover synthetic data generation, the feature split with a lightweight logistic model, and the validation plus SQL summary outputs.
+
+```bash
+pytest
+```
 
 ## Sample outputs
 
@@ -83,4 +84,8 @@ Full simulation output in `data/processed/stress_test_summary.csv`.
 - Stress multipliers are flat rather than macro-linked
 - Risk bands are for interpretation only, not regulatory scorecards
 - The Monte Carlo setup demonstrates the workflow but isn't calibrated for capital estimation
-- No reject inference, population stability or fairness analysis (yet)
+- No reject inference, population stability or fairness analysis yet
+
+## License
+
+MIT License.
