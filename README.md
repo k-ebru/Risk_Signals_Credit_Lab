@@ -83,7 +83,7 @@ Full simulation output in `data/processed/stress_test_summary.csv`.
 - The data is synthetic, so the results shouldn't be read as real credit performance
 - Stress multipliers are flat rather than macro-linked
 - Risk bands are for interpretation only, not regulatory scorecards
-- The Monte Carlo setup demonstrates the workflow but isn't calibrated for capital estimation
+- The Monte Carlo setup shows the workflow but isn't calibrated for capital estimation
 - No reject inference, population stability or fairness analysis yet
 
 ## License
